@@ -1,0 +1,28 @@
+{
+  "bookmarks": [
+
+  {
+      "id": "1",
+      "url": "https://flask.palletsprojects.com",
+      "title": "Flask project",
+      "description": "The best python web framework for our project",
+      "tags": "#python, #framework, #web"
+    },
+
+    {
+      "id": "2",
+      "url": "https://www.youtube.com/watch?v=Cmo1_GRobQ4",
+      "title": "The Lawyer Commercial That We All Need",
+      "description": "A skit by Joel Haver",
+      "tags": "#funny"
+    },
+
+    {
+      "id": "3",
+      "url": "https://stallman.org/",
+      "title": "Richard Stallman\n's Personal Site",
+      "description": "the Chief GNUisance of the GNU Project",
+      "tags": "#blog"
+    }
+  ]
+}

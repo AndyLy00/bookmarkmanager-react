@@ -1,13 +1,378 @@
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /*background: linear-gradient(-45deg, #FDFDBD, #C8FFD4, #B8E8FC, #B1AFFF);*/
+    background-image: url("./images/nr3.jpg");
+    background-size: 100% 100%;
+    /*animation: gradient 15s ease infinite;*/
+    height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*@keyframes gradient {*/
+/*    0% {*/
+/*        background-position: 0% 50%;*/
+/*    }*/
+/*    50% {*/
+/*        background-position: 100% 50%;*/
+/*    }*/
+/*    100% {*/
+/*        background-position: 0% 50%;*/
+/*    }*/
+/*}*/
+
+.container {
+    width: 100%;
+    max-width: 770px;
+    margin: 50px auto;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.page {
+    width: 140px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 0;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.align {
+    margin: 10px;
+}
+
+.align1 {
+    margin: 20px;
+}
+
+.page::after {
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    transition: 0.2s;
+
+}
+
+.page1::after {
+    background-color: #FDFDBD;
+}
+
+.page2::after {
+    background-color: #C8FFD4;
+}
+
+.page3::after {
+    background-color: #B8E8FC;
+}
+
+.page4::after {
+    background-color: #B1AFFF;
+}
+
+.page:hover::after {
+    top: 0;
+    left: 0;
+}
+
+
+.page_btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto 30px;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    display: block;
+    transition: 0.3s;
+}
+
+.bookmark_element {
+    display: flex;
+    width: 100%;
+}
+
+.bookmark_number {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    margin: 30px auto;
+    padding: 1rem 1.5rem;
+    background-color: white;
+
+}
+
+.bookmark_info {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 1.2rem;
+    margin: 30px auto;
+    padding: 0.5rem 1.5rem;
+    width: 75%;
+
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.right {
+    display: flex;
+}
+
+.info_logo {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.info_logo:hover {
+    color: #ff8080;
+}
+
+.bookmark_URL {
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.data {
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    border-color: #333333;
+}
+
+.data2 {
+    margin: 50px 0;
+}
+
+.list {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 30px auto 30px;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.edit {
+    color: #333;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit:hover {
+    background-color: #ffcccc;
+}
+
+.add_list {
+    display: block;
+    text-align: center;
+}
+
+.element2 {
+    font-size: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.element2:hover {
+    color: #ff9999;
+}
+
+.add_list_text {
+    font-size: 30px;
+    padding: 10px 0 30px;
+}
+
+.first_line {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.first_line_2 {
+    justify-content: space-around;
+}
+
+.second_line {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.second_line2 {
+
+}
+
+.third_line {
+    display: block;
+    margin: 20px;
+}
+
+.title {
+    font-size: 22px;
+    margin: 0 0 5px 0;
+}
+
+.advanced_input {
+    font-size: 18px;
+    color: #333;
+    padding: 5px;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    transition: 0.3s;
+    width: 300px;
+
+}
+.advanced_input_date{
+    cursor: pointer;
+}
+
+
+.type_of_border {
+    font-size: 18px;
+    color: #333;
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    transition: 0.3s;
+    width: 150px;
+}
+
+.tags_title {
+    font-size: 18px;
+    color: #333;
+    padding: 5px;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    transition: 0.3s;
+    width: 100px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.checkbox {
+    overflow-y: scroll;
+    max-height: 130px;
+}
+
+.checkbox_tag {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.chose {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.description_data {
+    color: #6699ff;
+    margin: 20px 20px 0;
+    font-size: 20px;
+}
+
+.combobox_display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: #ff9999;
+}
+
+.radio {
+    margin-right: 10px;
+    width: 30px;
+}
+
+.radio_name {
+    margin: 10px 0 10px -10px;
+    font-size: 20px;
+}
+
+.submit {
+    position: absolute;
+    right: 50px;
+    background: #ff9999;
+    border-radius: 999px;
+    box-shadow: #ff9999 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+
+}
+
+.submit:hover {
+    background: #ff8080;
+    box-shadow: #ff8080 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.submit2 {
+    margin-top: -70px;
+}
+
+.space {
+    padding-bottom: 100px;
 }
