@@ -10,11 +10,8 @@ export const Home = () => {
     const main_url = 'http://127.0.0.1:5000/bookmarks';
 
     async function getData() {
-        // const response  = await fetch(main_url);
-        // const data = await response.json();
-        // console.log(data);
-        fetch(main_url,
-            {mode:'no-cors'})
+
+        fetch(main_url)
             .then((response) => response.json())
             .then((data) => console.log(data));
     }
