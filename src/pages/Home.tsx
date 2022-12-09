@@ -1,53 +1,68 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCircleInfo} from '@fortawesome/free-solid-svg-icons'
 import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import axios from "axios";
 // import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react'
 
 export const Home = () => {
     const element = <FontAwesomeIcon icon={faCircleInfo}/>
     const element2 = <FontAwesomeIcon icon={faCirclePlus}/>
     const main_url = 'http://127.0.0.1:5000/bookmarks';
+    const [bookmarks, setBookmark] = useState([]);
 
-    async function getData() {
+    useEffect(() => {
+        fetchData();
+    }, [])
 
-        fetch(main_url)
-            .then((response) => response.json())
-            .then((data) => console.log(data));
+    const fetchData = async () => {
+        const {data} = await axios.get(main_url)
+        setBookmark(data)
     }
 
-    useEffect(() => {getData()});
+
+    //
+    // useEffect(() => {
+    //     getData();
+    // }, [])
+    //
+    // async function getData() {
+    //
+    //     fetch(main_url)
+    //         .then((response) => response.json())
+    //         .then((data) => console.log(data));
+    // }
 
 
-    const data = require('../data/data.json');
-
-    const DisplayData = data.bookmarks.map(
-        (bookmark: any) => {
-            return (
-                <div className="bookmark_element">
-                    <div className="bookmark_number"> {bookmark.id} </div>
-                    <div className="bookmark_info">
-                        <div className="top">
-
-                            <div className="left">
-                                <div className="bookmark_name">{bookmark.title}</div>
-                            </div>
-
-                            <div className="right">
-                                <div className="bookmark_tags">{bookmark.tags}</div>
-                                <div className="info_logo">{element}</div>
-                            </div>
-
-                        </div>
-                        <div className="bottom">
-                            <div className="bookmark_URL"> {bookmark.url}</div>
-                        </div>
-                    </div>
-                </div>
-
-            )
-        }
-    )
+    // const data = require('../data/data.json');
+    //
+    // const DisplayData = data.bookmarks.map(
+    //     (bookmark: any) => {
+    //         return (
+    //             <div className="bookmark_element">
+    //                 <div className="bookmark_number"> {bookmark.id} </div>
+    //                 <div className="bookmark_info">
+    //                     <div className="top">
+    //
+    //                         <div className="left">
+    //                             <div className="bookmark_name">{bookmark.title}</div>
+    //                         </div>
+    //
+    //                         <div className="right">
+    //                             <div className="bookmark_tags">{bookmark.tags}</div>
+    //                             <div className="info_logo">{element}</div>
+    //                         </div>
+    //
+    //                     </div>
+    //                     <div className="bottom">
+    //                         <div className="bookmark_URL"> {bookmark.url}</div>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //
+    //         )
+    //     }
+    // )
 
     return (
         <>
@@ -56,14 +71,37 @@ export const Home = () => {
                     <div className="list"> Most popular
                         <button className="edit">Edit</button>
                     </div>
-                    <div className="data">{DisplayData}</div>
+                        {bookmarks.map(bookmark => (
+                    <div key={bookmark.id}>
+                        <div className="bookmark_element">
+                            <div className="bookmark_number"> {bookmark.id} </div>
+                            <div className="bookmark_info">
+                                <div className="top">
+
+                                    <div className="left">
+                                        <div className="bookmark_name">{bookmark.title}</div>
+                                    </div>
+
+                                    <div className="right">
+                                        <div className="bookmark_tags">{bookmark.description}</div>
+                                        <div className="info_logo">{element}</div>
+                                    </div>
+
+                                </div>
+                                <div className="bottom">
+                                    <div className="bookmark_URL"> {bookmark.url}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        ))}
                 </div>
 
                 <div>
                     <div className="list"> Recent
                         <button className="edit">Edit</button>
                     </div>
-                    <div className="data">{DisplayData}</div>
+                    {/*<div className="data">{DisplayData}</div>*/}
                 </div>
             </div>
 
