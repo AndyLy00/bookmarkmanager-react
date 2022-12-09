@@ -9,7 +9,7 @@ export const Home = () => {
     const element = <FontAwesomeIcon icon={faCircleInfo}/>
     const element2 = <FontAwesomeIcon icon={faCirclePlus}/>
     const main_url = 'http://127.0.0.1:5000/bookmarks';
-    const [bookmarks, setBookmark] = useState([]);
+    const [bookmarks, setBookmark] = useState<any>([]);
 
     useEffect(() => {
         fetchData();
