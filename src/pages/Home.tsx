@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCircleInfo} from '@fortawesome/free-solid-svg-icons'
 import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
-import {useEffect, useState} from "react";
+import {JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState} from "react";
 import axios from "axios";
 // import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react'
 
@@ -71,7 +71,7 @@ export const Home = () => {
                     <div className="list"> Most popular
                         <button className="edit">Edit</button>
                     </div>
-                        {bookmarks.map(bookmark => (
+                    {bookmarks.map((bookmark: { id: React.Key | null | undefined; title: string; description: string; url: string; }) => (
                     <div key={bookmark.id}>
                         <div className="bookmark_element">
                             <div className="bookmark_number"> {bookmark.id} </div>
