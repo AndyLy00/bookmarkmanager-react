@@ -44,7 +44,7 @@ export const Home = () => {
 
                         </div>
                         <div className="bottom">
-                            <div className="bookmark_URL"> {bookmark.url}</div>
+                            <a className="bookmark_URL" href={bookmark.url}> {bookmark.url}</a>
                         </div>
                     </div>
                     <button className="delete_button" onClick={deleteDataById.bind(this, bookmark.id)}>X</button>
