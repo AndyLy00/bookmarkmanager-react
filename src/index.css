@@ -1,23 +1,9 @@
 
 body {
-    /*background: linear-gradient(-45deg, #FDFDBD, #C8FFD4, #B8E8FC, #B1AFFF);*/
     background-image: url("./images/nr3.jpg");
     background-size: 100% 100%;
-    /*animation: gradient 15s ease infinite;*/
     height: 100vh;
 }
-
-/*@keyframes gradient {*/
-/*    0% {*/
-/*        background-position: 0% 50%;*/
-/*    }*/
-/*    50% {*/
-/*        background-position: 100% 50%;*/
-/*    }*/
-/*    100% {*/
-/*        background-position: 0% 50%;*/
-/*    }*/
-/*}*/
 
 .container {
     width: 100%;
@@ -132,6 +118,9 @@ body {
     width: 75%;
 
 }
+.bookmark_tags {
+    margin-left: 10px;
+}
 
 .top {
     display: flex;
@@ -236,7 +225,7 @@ body {
 }
 
 .second_line2 {
-
+    margin-bottom: 100px;
 }
 
 .third_line {
@@ -366,7 +355,7 @@ body {
 
 .submit:hover {
     background: #ff8080;
-    box-shadow: #ff8080 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: #ff8080 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
 }
 
 .submit2 {
