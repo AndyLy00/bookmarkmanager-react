@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCircleInfo} from '@fortawesome/free-solid-svg-icons'
 import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
-import {JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import getApi from "../data/data";
 
 export const Home = () => {
@@ -18,10 +18,15 @@ export const Home = () => {
         getData().then();
     }, []);
 
+    async function deleteDataById(id: any) {
+        getApi.delete(`/` + id)
+            .then(() => getData());
+    }
+
     const DisplayData = bookmarks.map(
-        (bookmark: any) => {
+        (bookmark: { id: number; title: string;  tag: string; url: string;}) => {
             return (
-                <div className="bookmark_element">
+                <div className="bookmark_element" key={bookmark.id}>
                     <div className="bookmark_number"> {bookmark.id} </div>
                     <div className="bookmark_info">
                         <div className="top">
@@ -31,9 +36,9 @@ export const Home = () => {
                             </div>
 
                             <div className="right">
-                                {bookmark.tag.map((tag: string) => (
-                                    <div className="bookmark_tags">{tag} </div>
-                                ))}
+                                {/*{bookmark.tag.map((tag: string) => (*/}
+                                    <div className="bookmark_tags">{bookmark.tag}</div>
+                                 {/*))}*/}
                                 <div className="info_logo">{element}</div>
                             </div>
 
@@ -42,11 +47,9 @@ export const Home = () => {
                             <div className="bookmark_URL"> {bookmark.url}</div>
                         </div>
                     </div>
+                    <button className="delete_button" onClick={deleteDataById.bind(this, bookmark.id)}>X</button>
                 </div>
-
-            )
-        }
-    )
+            )})
 
     return (
         <>
@@ -62,7 +65,7 @@ export const Home = () => {
                     <div className="list"> Recent
                         <button className="edit">Edit</button>
                     </div>
-                    <div className="data">{DisplayData}</div>
+                    {/*<div className="data">{DisplayData}</div>*/}
                 </div>
             </div>
 

@@ -71,6 +71,30 @@ body {
     left: 0;
 }
 
+.page1_active::after {
+    background-color: #FDFDBD;
+    top: 0;
+    left: 0;
+}
+
+.page2_active::after {
+    background-color: #C8FFD4;
+    top: 0;
+    left: 0;
+}
+
+.page3_active::after {
+    background-color: #B8E8FC;
+    top: 0;
+    left: 0;
+}
+
+.page4_active::after {
+    background-color: #B1AFFF;
+    top: 0;
+    left: 0;
+}
+
 
 .page_btn {
     display: flex;
@@ -86,10 +110,37 @@ body {
     border-style: solid;
     border-width: 2px;
     background-color: rgb(255, 255, 255);
-    width: 90%;
+    width: 80%;
     display: block;
     transition: 0.3s;
 }
+
+.simple_search {
+    display: flex;
+}
+
+.simple_button {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    outline: transparent;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    width: 70px;
+    height: 75px;
+}
+
+.simple_button:hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
 
 .bookmark_element {
     display: flex;
@@ -118,6 +169,7 @@ body {
     width: 75%;
 
 }
+
 .bookmark_tags {
     margin-left: 10px;
 }
@@ -251,7 +303,8 @@ body {
     width: 300px;
 
 }
-.advanced_input_date{
+
+.advanced_input_date {
     cursor: pointer;
 }
 
@@ -303,6 +356,7 @@ body {
     color: #6699ff;
     margin: 20px 20px 0;
     font-size: 20px;
+
 }
 
 .combobox_display {
@@ -364,4 +418,30 @@ body {
 
 .space {
     padding-bottom: 100px;
+}
+
+.delete_button {
+    background: #e62143;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 33px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+    transition: all .2s ease-in-out;
+    touch-action: manipulation;
+    width: 40px;
+    height: 70px;
+    margin: auto 5px auto 0;
+    word-break: break-word;
+    border: 0;
+}
+
+.delete_button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
 }
