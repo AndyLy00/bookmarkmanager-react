@@ -24,10 +24,10 @@ export const Home = () => {
     }
 
     const DisplayData = bookmarks.map(
-        (bookmark: { id: number; title: string;  tag: string; url: string;}) => {
+        (bookmark: { id: number; title: string;  tags: Array<string>; url: string;}) => {
             return (
                 <div className="bookmark_element" key={bookmark.id}>
-                    <div className="bookmark_number"> {bookmark.id} </div>
+                    {/*<div className="bookmark_number"> {bookmark.id} </div>*/}
                     <div className="bookmark_info">
                         <div className="top">
 
@@ -36,9 +36,9 @@ export const Home = () => {
                             </div>
 
                             <div className="right">
-                                {/*{bookmark.tag.map((tag: string) => (*/}
-                                    <div className="bookmark_tags">{bookmark.tag}</div>
-                                 {/*))}*/}
+                                {bookmark.tags.map((tag: string) => (
+                                    <div className="bookmark_tags">{tag}</div>
+                                 ))}
                                 <div className="info_logo">{element}</div>
                             </div>
 

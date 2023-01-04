@@ -5,28 +5,60 @@
       "url": "https://flask.palletsprojects.com",
       "title": "Flask project",
       "description": "The best python web framework for our project",
-      "tag": "#python, #framework, #web"
+      "tags": [
+        "#python",
+        "#framework",
+        "#web"
+      ]
     },
     {
       "id": "2",
       "url": "https://www.youtube.com/watch?v=Cmo1_GRobQ4",
       "title": "The Lawyer Commercial That We All Need",
       "description": "A skit by Joel Haver",
-      "tag": "#funny"
+      "tags": [
+        "#funny"
+      ]
     },
     {
       "id": "3",
       "url": "https://stallman.org/",
       "title": "Richard Stallman\n's Personal Site",
       "description": "the Chief GNUisance of the GNU Project",
-      "tag": "#blog"
+      "tags": [
+        "#blog"
+      ]
     },
     {
       "title": "YouTube",
       "url": "https://www.youtube.com",
       "description": "watch videos",
-      "tag": "#videos, #music",
+      "tags": [
+        "#videos",
+        "#music"
+      ],
       "id": "5"
+    },
+    {
+      "title": "W3Schools",
+      "url": "https://www.w3schools.com/",
+      "description": "Website for studying programing",
+      "tags": [
+        "#web",
+        "#study"
+      ],
+      "id": "9eTJG8E"
+    },
+    {
+      "title": "Netflix",
+      "url": "https://www.netflix.com/md-en/",
+      "description": "A site for watching films",
+      "tags": [
+        "#films",
+        "#watch",
+        "#serials"
+      ],
+      "id": "hP1moG0"
     }
   ]
 }

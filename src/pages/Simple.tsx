@@ -22,6 +22,7 @@ export const Simple = () => {
 
     async function deleteDataById(id: any) {
         await getApi.delete(`/` + id);
+        window.location.reload();
     }
 
     return (
@@ -36,7 +37,7 @@ export const Simple = () => {
                     {data.map(item => {
                         return (
                             <div className="bookmark_element" key={item.id}>
-                                <div className="bookmark_number"> {item.id} </div>
+                                {/*<div className="bookmark_number"> {item.id} </div>*/}
                                 <div className="bookmark_info">
                                     <div className="top">
 
@@ -45,15 +46,15 @@ export const Simple = () => {
                                         </div>
 
                                         <div className="right">
-                                            {/*{bookmark.tag.map((tag: string) => (*/}
-                                            <div className="bookmark_tags">{item.tag}</div>
-                                            {/*))}*/}
+                                            {item.tags.map((tag: string) => (
+                                            <div className="bookmark_tags">{tag}</div>
+                                            ))}
                                             <div className="info_logo">{element}</div>
                                         </div>
 
                                     </div>
                                     <div className="bottom">
-                                        <div className="bookmark_URL"> {item.url}</div>
+                                        <a className="bookmark_URL" href={item.url}> {item.url}</a>
                                     </div>
                                 </div>
                                 <button className="delete_button" onClick={deleteDataById.bind(this, item.id)}>X</button>
