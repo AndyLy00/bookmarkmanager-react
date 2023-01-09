@@ -23,64 +23,36 @@ export const Advanced = () => {
     }, []);
 
     async function SearchByTitle() {
+        const {data} = await getApi.get("/");
+        let initBooks = data;
         const input1 = title;
-
-        if (input1) {
-            try {
-                const res = await getApi.get(`?title=${input1}`);
-                setData(res.data);
-            } catch (err) {
-                console.log(err);
-            }
-        }
+        let a = initBooks.filter(({"title": t}: any) => t && t.includes(input1));
+        setData(a);
     }
 
     async function SearchByUrl() {
+        const {data} = await getApi.get("/");
+        let initBooks = data;
         const input2 = url;
-
-        if (input2) {
-            try {
-                const res = await getApi.get(`?url=${input2}`);
-                setData(res.data);
-            } catch (err) {
-                console.log(err);
-            }
-        }
+        let b = initBooks.filter(({"url": t}: any) => t && t.includes(input2));
+        setData(b);
     }
 
     async function SearchByDescription() {
+        const {data} = await getApi.get("/");
+        let initBooks = data;
         const input3 = description;
-
-        if (input3) {
-            try {
-                const res = await getApi.get(`?description=${input3}`);
-                setData(res.data);
-            } catch (err) {
-                console.log(err);
-            }
-        }
+        let c = initBooks.filter(({"description": t}: any) => t && t.includes(input3));
+        setData(c);
     }
 
     async function SearchByTag() {
+        const {data} = await getApi.get("/");
+        let initBooks = data;
         const input4 = tag;
-
-        if (input4) {
-            try {
-
-                // @ts-ignore
-                const res = bookmarks.filter(({ ["tags"]: tag }) => tag && tag.includes(input4));
-                setData(res.data);
-            } catch (err) {
-                console.log(err);
-            }
-        }
+        let d = initBooks.filter(({"tags": t}: any) => t && t.includes(input4));
+        setData(d);
     }
-
-    useEffect(() => {
-        // @ts-ignore
-        const res = bookmarks.filter(({ ["tags"]: tag }) => tag && tag.includes("#web"));
-        console.log(res);
-    }, []);
 
     async function deleteDataById(id: any) {
         await getApi.delete(`/` + id);

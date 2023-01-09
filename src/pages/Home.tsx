@@ -22,6 +22,7 @@ export const Home = () => {
         getApi.delete(`/` + id)
             .then(() => getData());
     }
+    
 
     const DisplayData = bookmarks.map(
         (bookmark: { id: number; title: string;  tags: Array<string>; url: string;}) => {
