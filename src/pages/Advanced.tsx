@@ -11,6 +11,7 @@ export const Advanced = () => {
 
     const [data, setData] = useState<any[]>([]);
     const [bookmarks, setBookmark] = useState<any>([]);
+    const [newTag, setNewTag] = useState<any[]>([]);
     const element = <FontAwesomeIcon icon={faCircleInfo}/>
 
     const getData = async () => {
@@ -59,16 +60,29 @@ export const Advanced = () => {
         window.location.reload();
     }
 
-    const SpecialInput = bookmarks.map(
-        (bookmark: { id: number; title: string; tags: Array<string>; url: string;}) => {
+    const SpecialInput = newTag.map(
+        (newt: any) => {
             return (
                 <>
-                {bookmark.tags.map((tag: string) => (
-                        <option className="bookmark_tags">{tag}</option>
-                    ))}
+                        <option className="bookmark_tags">{newt}</option>
                 </>
             )})
 
+    async function uniqueTag() {
+        const {data} = await getApi.get("/");
+        let d = data.map((bookmark: { id: number; title: string; tags: Array<string>; url: string;}) => bookmark.tags)
+        let dFlat = d.flat();
+        let newTagArray = dFlat.filter((c: any, index: any) => {
+            return dFlat.indexOf(c) === index;
+        });
+        setNewTag(newTagArray);
+        return newTagArray;
+    }
+
+
+    useEffect(() => {
+        console.log(uniqueTag());
+    }, []);
 
     return (
         <>
