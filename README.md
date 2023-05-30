@@ -15,3 +15,5 @@
 ## 4. Start Project
 
 ### `npm start`
+
+## 5. Project without json-server: https://bookmarkmanager107.netlify.app
